@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<center><title> Cookies Promise "with""20"height"20" </title></center>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: linear-gradient(to bottom, #020024, #090979, #00d4ff);
+}
+<img src="momo.jpg">
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* SOCIAL ICONS */
+.social a {
+    margin-left: 15px;
+    font-size: 28px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    color: #ffd700;
+    transform: scale(1.2);
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.hero img {
+    width: 320px;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.hero-text {
+    max-width: 500px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 32px;
+}
+
+.btn {
+    background: #f5f5dc;
+    color: #000;
+    border: none;
+    padding: 14px 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e6d8a8;
+}
+
+/* SECTIONS */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* FORM INPUTS */
+input, textarea {
+    width: 80%;
+    padding: 14px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f5f5dc;
+    color: #000;
+    font-size: 20px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #555;
+    font-size: 18px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+    color: #ccc;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo"> Cookies Promise </div>
+
+    <div class="social">
+        <a href="https://www.instagram.com/plum._.eria?igsh=MXdienZ4YzF0ZDNucg==="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.tiktok.com/@3__hdee" target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+</header>
+
+<section class="hero">
+    <img src="log.png" alt="cookies">
+
+    <div class="hero-text">
+
+        <h1>كوكيز بالشوكولاتة  🍫</h1>
+        <p>Mini cookies in premium chocolate tub</p>
+        <button class="btn" onclick="scrollToOrder()">اطلب الآن</button>
+    </div>
+</section>
+
+<section id="order">
+    <h2>اطلب الآن</h2>
+
+    <form onsubmit="sendToWhatsApp(); return false;">
+        <input type="text" id="name" placeholder="الاسم" required>
+        <input type="text" id="phone" placeholder="رقم الهاتف" required>
+        <input type="text" id="city" placeholder="المدينة" required>
+        <textarea id="note" placeholder="ملاحظات"></textarea>
+        <br>
+        <button class="btn" type="submit">إرسال عبر WhatsApp</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 Cookies Promise
+</footer>
+
+<script>
+function scrollToOrder(){
+    document.getElementById("order").scrollIntoView({behavior:"smooth"});
+}
+
+function sendToWhatsApp(){
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let city = document.getElementById("city").value;
+    let note = document.getElementById("note").value;
+
+    let message = `طلب جديد:%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالمدينة: ${city}%0Aملاحظات: ${note}`;
+
+    let number = "212649425216";
+    let url = `https://wa.me/${number}?text=${message}`;
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
